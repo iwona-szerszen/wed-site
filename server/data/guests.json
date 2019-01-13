@@ -1,0 +1,24 @@
+[
+	{
+		"id": 1,
+		"names": "Mary & John Smith",
+		"relationship": "bride's parents",
+		"totalMembers": 2,
+		"confirmed": true,
+		"attended": true
+	},
+	{
+		"id": 2,
+		"names": "Elizabeth & William Johnes",
+		"relationship": "groom's parents",
+		"totalMembers": 2,
+		"confirmed": true,
+		"attended": true
+	},
+	{
+		"id": 3,
+		"names": "Sarah & Thomas Williams with children",
+		"relationship": "friends",
+		"totalMembers": 4
+	}
+]

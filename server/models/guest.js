@@ -7,8 +7,8 @@ const guestSchema = new Schema({
 	names: { type: 'String', required: true },
 	relationship: { type: 'String', required: true },
 	totalMembers: { type: 'Number', required: true },
-	confirmed: { type: 'Boolean', required: true },
-	attended: { type: 'Boolean', required: false },
+	confirmed: { type: 'Boolean', default: false },
+	attended: { type: 'Boolean', default: false },
 	presents: [{ type: Schema.ObjectId, ref: 'Present', required: false }],
 	dedications: [{ type: Schema.ObjectId, ref: 'Dedication', required: false }],
 });

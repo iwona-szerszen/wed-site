@@ -48,7 +48,8 @@ import { fetchComponentData } from './util/fetchData';
 import guests from './routes/guest.routes';
 import presents from './routes/present.routes';
 import dedications from './routes/dedication.routes';
-import dummyData from './dummyData';
+//import dummyData from './dummyData';
+import dummyData from './data/dummyData';
 import serverConfig from './config';
 
 // Set native promises as mongoose promise

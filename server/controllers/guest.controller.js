@@ -6,6 +6,6 @@ export function getGuests(req, res) {
 		if (err) {
 			res.status(500).send(err);
 		}
-		res.json({ guests });
+		res.json(guests);
 	});
 }

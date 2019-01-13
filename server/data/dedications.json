@@ -1,0 +1,33 @@
+[
+
+	{
+	    "id": 1,
+	    "song": "Bryan Adams, Rod Stewart, Sting - All For Love",
+	    "content": "You are two amazing people. Or, maybe we should say, you are one amazing couple. Congratulations!"
+	},
+	{
+	    "id": 2,
+	    "song": "Aerosmith – I don’t wanna miss a thing",
+	    "content": "We're so happy for you! May your lives be enriched by each other"
+	},
+	{
+	    "id": 3,
+	    "song": "Berlin – Take My Breathe Away",
+	    "content": "May today be just the beginning of a lifetime of happiness together."
+	},
+	{
+	    "id": 4,
+	    "song": "Bon Jovi – Always",
+	    "content": "I am glad to be a part of your wedding day, and I am looking forward to seeing what comes from you two."
+	},
+	{
+	    "id": 5,
+	    "song": "Whitney Houston - I Will Always Love You",
+	    "content": "Remember that you two are still boyfriend and girlfriend. Don't ever let marriage take that away from you."
+	},
+	{
+	    "id" : 6,
+	    "song" : "Alicia Keys - If I Ain't Got You",
+	    "content" : "Congratulations! And thank you for letting us be part of your special day."
+	}
+]

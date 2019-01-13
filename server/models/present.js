@@ -7,7 +7,7 @@ const presentSchema = new Schema({
 	name: { type: 'String', required: true },
 	price: { type: 'Number', required: true },
 	imageUrl: { type: 'String', required: true },
-	reserved: { type: 'Boolean', required: true },
+	reserved: { type: 'Boolean', default: false },
 });
 
 export default mongoose.model('Present', presentSchema);
