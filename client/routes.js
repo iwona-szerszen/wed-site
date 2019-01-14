@@ -20,9 +20,9 @@ if (process.env.NODE_ENV !== 'production') {
   require('./modules/Post/pages/PostListPage/PostListPage');
   require('./modules/Post/pages/PostDetailPage/PostDetailPage');
   require('./components/presentational/Home/Home');
-  require('./components/presentational/Guests/GuestList');
+  require('./components/containers/GuestPageContainer');
   require('./components/containers/PresentListContainer');
-  require('./components/containers/DedicationListContainer');
+  require('./components/containers/DedicationPageContainer');
   require('./components/presentational/NotFound/NotFound');
 }
 
@@ -61,7 +61,7 @@ export default (
       path='/guests'
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./components/presentational/Guests/GuestList').default);
+          cb(null, require('./components/containers/GuestPageContainer').default);
         });
       }}
     />
@@ -77,7 +77,7 @@ export default (
       path='/dedications'
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./components/containers/DedicationListContainer').default);
+          cb(null, require('./components/containers/DedicationPageContainer').default);
         });
       }}
     />   

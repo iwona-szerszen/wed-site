@@ -9,3 +9,13 @@ export function getGuests(req, res) {
 		res.json(guests);
 	});
 }
+
+// Edit a guest by id
+export function editGuest(req, res) {
+	Guest.findOneAndUpdate({ id: req.params.id }, req.body.guest, {new: true}).exec((err, updated) => {
+		if (err) {
+			res.status(500).send(err);
+		}
+		res.json(updated);
+	});
+}
