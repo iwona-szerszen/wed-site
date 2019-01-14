@@ -1,5 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Present from './Present';
 
-const PresentList = () => <h2>Here will be PresentList</h2>;
+const PresentList = props => {
+	return (
+		<ul>
+			{props.presents.map(item => (
+				<Present
+					key={item.id}
+					present={item}
+					reservePresent={() => props.handleReservePresent(item.id, item)}
+				/>
+			))}
+		</ul>
+	);
+};
+
+PresentList.propTypes = {
+	presents: PropTypes.array,
+	handleReservePresent: PropTypes.func,
+};
 
 export default PresentList;

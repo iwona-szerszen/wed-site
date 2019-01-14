@@ -3,21 +3,19 @@
 		"id": 1,
 		"name": "Coffee Machine Philips OTC EP5360/10",
 		"price": 460,
-		"imageUrl": "coffee-machine.jpg",
-		"reserved": false
+		"imageUrl": "coffee-machine.jpg"
 	},
 	{
 		"id": 2,
 		"name": "TV Samsung QLED QE55Q7FN",
 		"price": 1230,
 		"imageUrl": "tv.jpg",
-		"reserved": false
+		"reserved": true
 	},
 	{
 		"id": 3,
 		"name": "Camera Canon EOS M5",
 		"price": 600,
-		"imageUrl": "camera.jpg",
-		"reserved": false
+		"imageUrl": "camera.jpg"
 	}
 ]

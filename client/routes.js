@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('./modules/Post/pages/PostDetailPage/PostDetailPage');
   require('./components/presentational/Home/Home');
   require('./components/presentational/Guests/GuestList');
-  require('./components/presentational/Presents/PresentList');
+  require('./components/containers/PresentListContainer');
   require('./components/containers/DedicationListContainer');
   require('./components/presentational/NotFound/NotFound');
 }
@@ -69,7 +69,7 @@ export default (
       path='/presents'
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./components/presentational/Presents/PresentList').default);
+          cb(null, require('./components/containers/PresentListContainer').default);
         });
       }}
     />
