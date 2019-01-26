@@ -2,7 +2,8 @@ import callApi from '../util/apiCaller';
 
 // Export Constants
 export const ADD_PRESENTS = 'ADD_PRESENTS';
-export const EDIT_PRESENT_RESERVATION = 'EDIT_PRESENT_RESERVATION';
+export const RESERVE_PRESENT = 'RESERVE_PRESENT';
+export const CANCEL_PRESENT_RESERVATION = 'CANCEL_PRESENT_RESERVATION';
 
 // Export Actions
 export function fetchPresentsRequest() {
@@ -18,19 +19,32 @@ export function addPresents(presents) {
 	};
 }
 
-export function editPresentReservationRequest(id, present) {
+export function reservePresentRequest(presentId, guestId) {
 	return dispatch => {
-		return callApi(`presents/${id}`, 'put', {
-			present: {
-				reserved: !present.reserved,
-			},
-		}).then(() => dispatch(editPresentReservation(id)));
-	}
+		return callApi(`presents/${presentId}/reserve`, 'put', { guestId })
+			.then(res => dispatch(reservePresent(res, guestId)));
+	};
 }
 
-export function editPresentReservation(id) {
+export function reservePresent(present, guestId) {
 	return {
-		type: EDIT_PRESENT_RESERVATION,
-		id,
+		type: RESERVE_PRESENT,
+		present,
+		guestId,
+	};
+}
+
+export function cancelPresentReservationRequest(presentId, guestId) {
+	return dispatch => {
+		return callApi(`presents/${presentId}/cancel`, 'put', { guestId })
+			.then(res => dispatch(cancelPresentReservation(presentId, res)));
+	};
+}
+
+export function cancelPresentReservation(presentId, guestUpdated) {
+	return {
+		type: CANCEL_PRESENT_RESERVATION,
+		presentId,
+		guestUpdated,
 	};
 }

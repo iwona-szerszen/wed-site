@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { testGuestId } from '../../../server/config';
 
 // Import Components
 import PresentList from '../presentational/Presents/PresentList';
 
 // Import Actions
-import { fetchPresentsRequest, editPresentReservationRequest } from '../../actions/PresentActions';
+import { fetchPresentsRequest, reservePresentRequest } from '../../actions/PresentActions';
 
 // Import Selector
 import { getPresents } from '../../reducers/PresentReducer';
@@ -15,8 +16,8 @@ class PresentListContainer extends Component {
   componentDidMount() {
     this.props.dispatch(fetchPresentsRequest());
   }
-  handleReservePresent(id, present) {
-    this.props.dispatch(editPresentReservationRequest(id, present));
+  handleReservePresent(presentId) {
+    this.props.dispatch(reservePresentRequest(presentId, testGuestId));
   }
   render() {
   	return (

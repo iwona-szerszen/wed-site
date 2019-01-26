@@ -6,7 +6,10 @@ const router = new Router();
 // Get all Presents
 router.route('/presents').get(PresentController.getPresents);
 
-// Edit a present by id
-router.route('/presents/:id').put(PresentController.editPresent);
+// Reserve a present by id
+router.route('/presents/:id/reserve').put(PresentController.reservePresent);
+
+// Cancel present's reservation by id
+router.route('/presents/:id/cancel').put(PresentController.cancelPresentReservation);
 
 export default router;
