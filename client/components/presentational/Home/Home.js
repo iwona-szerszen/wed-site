@@ -1,5 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Counter from './Counter/Counter';
+import Carousel from './Carousel/Carousel';
 
-const Home = () => <h1>Time left to wedding</h1>;
+const Home = props => {
+	return (
+		<div>
+			<Counter />
+			<Carousel />
+		</div>
+	);
+};
 
 export default Home;
