@@ -4,4 +4,6 @@ const config = {
   port: process.env.PORT || 8000,
 };
 
+export const testGuestId = '5c3f3af3c88fdf27d4522134';
+
 export default config;

@@ -1,54 +1,71 @@
+import mongoose from 'mongoose';
+import sanitizeHtml from 'sanitize-html';
 import Dedication from '../models/dedication';
 import Guest from '../models/guest';
-import uuid from 'uuid';
-import sanitizeHtml from 'sanitize-html';
 
 // Get all dedications
 export function getDedications(req, res) {
-	Dedication.find().exec((err, dedications) => {
+	
+	Dedication.find().populate('from', 'names').exec((err, dedications) => {
 		if (err) {
 			res.status(500).send(err);
 		}
-		//res.json({ dedications });
 		res.json(dedications);
 	});
 }
 
 // Add a new dedication
 export function addDedication(req, res) {
-	//if (!req.body.dedication.song || !req.body.dedication.content || !req.body.guestId) {
-	if (!req.body.dedication.song || !req.body.dedication.content) {
+	if (!req.body.dedication.song || !req.body.dedication.content || !req.body.dedication.from) {
 		res.status(403).end();
 	}
 
 	const newDedication = new Dedication(req.body.dedication);
-	newDedication.id = uuid();
+	newDedication._id = new mongoose.Types.ObjectId();
 
 	// Sanitize inputs
 	newDedication.song = sanitizeHtml(newDedication.song);
-	newDedication.content = sanitizeHtml(newDedication.content); 
+	newDedication.content = sanitizeHtml(newDedication.content);
+	newDedication.from = sanitizeHtml(newDedication.from);
 
-	newDedication.save((err, saved) => {
+	newDedication.save((err, dedicationSaved) => {
 		if (err) {
 			res.status(500).send(err);
 		}
-		/*
-		Guest.findOne({ id: req.body.guestId })
-			.then(guest => {
-				guest.dedications.push(saved);
-				return guest.save();
-			})
-			.then(() => {
-				res.json({ dedication: saved });
-			})
-		*/
-		res.json({ dedication: saved });	
+
+		//Guest.findOneAndUpdate({ _id: req.body.dedication.from }, { $push: { dedications: dedicationSaved }}, {new: true})
+		Guest.findOneAndUpdate({ _id: req.body.dedication.from }, { $push: { dedications: { $each: [dedicationSaved], $position: 0 } }}, {new: true})
+			.then(guestUpdated => res.json(guestUpdated))
+			.catch(err => res.status(500).send(err));
 	});
 }
 
+// Delete a dedication by id
+export function deleteDedication(req, res) {
+	Dedication.findOne({ _id: req.params.id }).exec((err, dedication) => {
+		if (err) {
+			res.status(500).send(err);
+		}
+		dedication.remove();
+		Guest.findOne({ _id: req.body.guestId })
+			.then(guest => {
+				guest.dedications.pull({ _id: req.params.id });
+				return guest.save();
+			})
+			.then(guestUpdated => res.json(guestUpdated))
+			.catch(err => res.status(500).send(err));
+	});
+}
+
+
+
+
+
+
+
 // Edit a dedication by id
 export function editDedication(req, res) {
-	Dedication.findOneAndUpdate({ id: req.params.id }, req.body.dedication, {new: true}).exec((err, updated) => {
+	Dedication.findOneAndUpdate({ _id: req.params.id }, req.body.dedication, {new: true}).exec((err, updated) => {
 		if (err) {
 			res.status(500).send(err);
 		}
@@ -56,14 +73,3 @@ export function editDedication(req, res) {
 	});
 }
 
-// Delete a dedication by id
-export function deleteDedication(req, res) {
-	Dedication.findOne({ id: req.params.id }).exec((err, dedication) => {
-		if (err) {
-			res.status(500).send(err);
-		}
-		dedication.remove(() => {
-			res.status(200).end();
-		});
-	});
-}

@@ -10,12 +10,22 @@ export function getGuests(req, res) {
 	});
 }
 
-// Edit a guest by id
-export function editGuest(req, res) {
-	Guest.findOneAndUpdate({ id: req.params.id }, req.body.guest, {new: true}).exec((err, updated) => {
+// Get a guest by id
+export function getGuest(req, res) {
+	Guest.findOne({ _id: req.params.id }).exec((err, guest) => {
 		if (err) {
 			res.status(500).send(err);
 		}
-		res.json(updated);
+		res.json(guest);
+	});
+}
+
+// Edit a guest by id
+export function editGuest(req, res) {
+	Guest.findOneAndUpdate({ _id: req.params.id }, req.body.guest, {new: true}).exec((err, guestUpdated) => {
+		if (err) {
+			res.status(500).send(err);
+		}
+		res.json(guestUpdated);
 	});
 }
