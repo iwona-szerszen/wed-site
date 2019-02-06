@@ -1,21 +1,48 @@
 [
 	{
-		"id": 1,
+		"_id": "5c3f573551a9ce233ca6a309",
 		"name": "Coffee Machine Philips OTC EP5360/10",
 		"price": 460,
-		"imageUrl": "coffee-machine.jpg"
+		"image": "coffee-machine.jpg"
 	},
 	{
-		"id": 2,
+		"_id": "5c3f573551a9ce233ca6a310",
 		"name": "TV Samsung QLED QE55Q7FN",
 		"price": 1230,
-		"imageUrl": "tv.jpg",
+		"image": "tv.jpg",
 		"reserved": true
 	},
 	{
-		"id": 3,
+		"_id": "5c3f573551a9ce233ca6a311",
 		"name": "Camera Canon EOS M5",
 		"price": 600,
-		"imageUrl": "camera.jpg"
+		"image": "camera.jpg"
+	},
+	{
+		"_id": "5c3f573551a9ce233ca6a312",
+		"name": "Personalized Anniversary Pushpin World Map",
+		"price": 130,
+		"image": "world-map.jpg",
+		"reserved": true
+	},
+	{
+		"_id": "5c3f573551a9ce233ca6a313",
+		"name": "Anniversary Wine Box",
+		"price": 165,
+		"image": "wine-box.jpg"
+	},
+	{
+		"_id": "5c3f573551a9ce233ca6a314",
+		"name": "Barsys Robot Bartender",
+		"price": 1000,
+		"image": "bartender.jpg"
+	},
+	{
+		"_id": "5c3f573551a9ce233ca6a315",
+		"name": "Do Good Cotton Hammock",
+		"price": 130,
+		"image": "hammock.jpg"
 	}
+
 ]
+

@@ -78,9 +78,9 @@ const dummyData = () => {
 		.then(() => {
 			loadDummyData()
 				.then(() => console.log('Data loaded from JSON files into database'))
-				.catch(err => console.error(err))
+				.catch(err => console.error(err));
 		})
-		.catch(err => console.error(err))
+		.catch(err => console.error(err));
 };
 
 export default dummyData;
