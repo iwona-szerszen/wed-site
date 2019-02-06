@@ -6,7 +6,7 @@ const GuestList = props => {
 	return (
 		<ul>
 			{props.guests.map(item => (
-				<Guest key={item.id} guest={item} />
+				<Guest key={item._id} guest={item} />
 			))}
 		</ul>
 	);

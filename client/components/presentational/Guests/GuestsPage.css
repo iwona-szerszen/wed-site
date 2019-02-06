@@ -1,0 +1,25 @@
+.statistic {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	width: 300px;
+	top: 50px;
+	right: 0;
+	bottom: 50px;
+}
+
+.figures {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.figures > h2 {
+	margin-bottom: 0;
+}

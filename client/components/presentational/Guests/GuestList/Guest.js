@@ -8,6 +8,7 @@ const Guest = props => {
 			<span> {props.guest.relationship} </span>
 			<span>{props.guest.totalMembers}</span>
 			<span>status?</span>
+			<hr />
 		</li>
 	);
 };
