@@ -3,9 +3,10 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const dedicationSchema = new Schema({
-	id: { type: 'String', required: true, unique: true },
+	_id: { type: Schema.Types.ObjectId, required: true, unique: true },
 	song: { type: 'String', required: true },
-	content: { type: 'String', required: true }, 
+	content: { type: 'String', required: true },
+  from: { type: Schema.Types.ObjectId, ref: 'Guest', required: true }
 });
 
 export default mongoose.model('Dedication', dedicationSchema);
