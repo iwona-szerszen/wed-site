@@ -1,0 +1,21 @@
+.navigation {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.link,
+.yourProfile {
+	text-transform: uppercase;
+}
+
+.link {
+	margin-right: 15px;
+}
+
+.link:hover,
+.yourProfile:hover {
+	text-decoration: none;
+	color: red;
+}
