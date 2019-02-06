@@ -6,7 +6,7 @@
     "test": "cross-env NODE_ENV=test PORT=8080 MONGO_URL=mongodb://localhost:27017/mern-test node_modules/.bin/nyc node node_modules/ava/cli.js",
     "watch:test": "npm run test -- --watch",
     "cover": "nyc npm run test",
-    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100", 
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "start": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development nodemon index.js",
     "start:prod": "cross-env NODE_ENV=production node index.js",
     "bs": "npm run clean && npm run build && npm run build:server && npm run start:prod",
@@ -14,8 +14,7 @@
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.config.server.js",
     "clean": "rimraf dist",
     "slate": "rimraf node_modules && npm install",
-    "lint": "eslint client server",
-    "transpile": "babel node_modules/react-countdown-date/index.js --out-file babel node_modules/react-countdown-date/index.js" 
+    "lint": "eslint client server"
   },
   "pre-commit": [
     "lint",
@@ -46,12 +45,14 @@
     "mongoose": "^4.4.20",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-countdown-date": "^1.0.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.1.2",
     "react-redux": "^5.0.6",
     "react-router": "^3.2.1",
+    "react-router-dom": "^4.3.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "sanitize-html": "^1.11.4"

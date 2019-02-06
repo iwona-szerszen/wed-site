@@ -2,6 +2,8 @@ var fs = require('fs');
 var path = require('path');
 var ExternalsPlugin = require('webpack2-externals-plugin');
 
+var babelLoaderExcludeNodeModulesExcept = require('babel-loader-exclude-node-modules-except');
+
 module.exports = {
   entry: path.resolve(__dirname, 'server/server.js'),
 
