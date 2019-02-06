@@ -1,20 +1,34 @@
 import callApi from '../util/apiCaller';
 
 // Export Constants
-export const ADD_GUESTS = 'ADD_GUESTS';
+export const LOAD_GUESTS = 'LOAD_GUESTS';
+export const LOAD_GUEST = 'LOAD_GUEST';
 export const EDIT_GUEST = 'EDIT_GUEST';
 
 // Export Actions
 export function fetchGuestsRequest() {
 	return dispatch => {
-		return callApi('guests').then(res => dispatch(addGuests(res)));
+		return callApi('guests').then(res => dispatch(loadGuests(res)));
 	};
 }
 
-export function addGuests(guests) {
+export function loadGuests(guests) {
 	return {
-		type: ADD_GUESTS,
+		type: LOAD_GUESTS,
 		guests,
+	};
+}
+
+export function fetchGuestRequest(id) {
+	return dispatch => {
+		return callApi(`guests/${id}`).then(res => dispatch(loadGuest(res)));
+	};
+}
+
+export function loadGuest(guest) {
+	return {
+		type: LOAD_GUEST,
+		guest,
 	};
 }
 
@@ -23,17 +37,16 @@ export function editGuestRequest(id, guest) {
 		return callApi(`guests/${id}`, 'put', {
 			guest: {
 				totalMembers: guest.totalMembers,
-				confirmed: guest.confirmed,
+				responded: guest.responded,
 				attended: guest.attended,
 			},
-		}).then(res => dispatch(editGuest(id, res)));
+		}).then(res => dispatch(editGuest(res)));
 	};
 }
 
-export function editGuest(id, guest) {
+export function editGuest(guestUpdated) {
 	return {
 		type: EDIT_GUEST,
-		id,
-		guest,
+		guestUpdated,
 	};
 }

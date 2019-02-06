@@ -7,23 +7,16 @@ export const EDIT_DEDICATION = 'EDIT_DEDICATION';
 export const DELETE_DEDICATION = 'DELETE_DEDICATION';
 
 // Export Actions
-export function addDedications(dedications) {
-  return {
-    type: ADD_DEDICATIONS,
-    dedications,
-  };
-}
-
 export function fetchDedicationsRequest() {
   return dispatch => {
     return callApi('dedications').then(res => dispatch(addDedications(res)));
   };
 }
 
-export function addDedication(dedication) {
+export function addDedications(dedications) {
   return {
-    type: ADD_DEDICATION,
-    dedication,
+    type: ADD_DEDICATIONS,
+    dedications,
   };
 }
 
@@ -33,18 +26,22 @@ export function addDedicationRequest(dedication) {
       dedication: {
         song: dedication.song,
         content: dedication.content,
+        from: dedication.from,
       },
-    }).then(res => dispatch(addDedication(res.dedication)));
+    }).then(res => dispatch(addDedication(res, dedication)));
   };
 }
 
-export function editDedication(id, dedication) {
+export function addDedication(guestUpdated, dedication) {
   return {
-    type: EDIT_DEDICATION,
-    id,
+    type: ADD_DEDICATION,
+    guestUpdated,
     dedication,
   };
 }
+
+
+
 
 export function editDedicationRequest(id, dedication) {
   return dispatch => {
@@ -57,42 +54,34 @@ export function editDedicationRequest(id, dedication) {
   };
 }
 
-export function deleteDedication(id) {
+
+
+
+export function editDedication(id, dedication) {
+  return {
+    type: EDIT_DEDICATION,
+    id,
+    dedication,
+  };
+}
+
+
+
+
+
+
+
+export function deleteDedicationRequest(dedicationId, guestId) {
+  return dispatch => {
+    return callApi(`dedications/${dedicationId}`, 'delete', { guestId })
+      .then(res => dispatch(deleteDedication(dedicationId, res)));
+  };
+}
+
+export function deleteDedication(dedicationId, guestUpdated) {
   return {
     type: DELETE_DEDICATION,
-    id,
+    dedicationId,
+    guestUpdated,
   };
 }
-
-export function deleteDedicationRequest(id) {
-  return dispatch => {
-    return callApi(`dedications/${id}`, 'delete').then(() => dispatch(deleteDedication(id)));
-  };
-}
-
-
-/*
-export function fetchPost(cuid) {
-  return (dispatch) => {
-    return callApi(`posts/${cuid}`).then(res => dispatch(addPost(res.post)));
-  };
-}
-
-export function thumbUpPost(cuid, post) {
-  return {
-    type: THUMB_UP_POST,
-    cuid,
-    post,
-  };
-}
-
-export function thumbUpPostRequest(cuid, post) {
-  return (dispatch) => {
-    return callApi(`posts/${cuid}/up`, 'put', {
-      post: {
-        voteCount: post.voteCount + 1,
-      },
-    }).then(() => dispatch(thumbUpPost(cuid, post)));
-  };
-}
-*/
