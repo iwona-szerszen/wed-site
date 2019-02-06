@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class AddDedication extends Component {
-  onSubmit(event) {
+  onSubmitAddDedication(event) {
     const songRef = this.refs.song;
     const contentRef = this.refs.content;
     if (songRef.value && contentRef.value) {
-      this.props.onSubmit(event, songRef.value, contentRef.value);
+      this.props.onSubmitAddDedication(event, songRef.value, contentRef.value);
       songRef.value = contentRef.value = '';
     }
   }
@@ -14,7 +14,7 @@ class AddDedication extends Component {
     return (
       <div>
         <h4>Add new dedication</h4>
-        <form onSubmit={event => this.onSubmit(event)}>
+        <form onSubmit={event => this.onSubmitAddDedication(event)}>
             <div className='form-group row'>
               <label htmlFor='song' className='col-sm-2 col-form-label'>Song</label>
               <div className='col-sm-10'>
@@ -24,6 +24,7 @@ class AddDedication extends Component {
                   id='song'
                   ref='song'
                   placeholder='author and title of the song'
+                  required
                 />
               </div>
             </div>
@@ -35,6 +36,7 @@ class AddDedication extends Component {
                     id='content'
                     ref='content'
                     placeholder='content of your dedication'
+                    required
                   />
               </div>
             </div>
@@ -50,7 +52,7 @@ class AddDedication extends Component {
 };
 
 AddDedication.propTypes = {
-	onSubmit: PropTypes.func,
+	onSubmitAddDedication: PropTypes.func,
 };
 
 export default AddDedication;
