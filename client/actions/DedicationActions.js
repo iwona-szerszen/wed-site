@@ -24,6 +24,7 @@ export function addDedicationRequest(dedication) {
   return dispatch => {
     return callApi('dedications', 'post', {
       dedication: {
+        videoId: dedication.videoId,
         song: dedication.song,
         content: dedication.content,
         from: dedication.from,

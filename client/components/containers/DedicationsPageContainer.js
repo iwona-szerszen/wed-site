@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, connect } from 'react-redux';
 
 // Import Components
-import DedicationList from '../presentational/Dedications/DedicationList';
+import DedicationList from '../presentational/Dedications/DedicationList/DedicationList';
 
 // Import Actions
 import { fetchDedicationsRequest } from '../../actions/DedicationActions';
