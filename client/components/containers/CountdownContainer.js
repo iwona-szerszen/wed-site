@@ -31,17 +31,7 @@ class CountdownContainer extends Component {
 	    const minutes = parseInt(difference / (60 * 1000) - (days * 24 * 60) - (hours * 60));
 	    const seconds = parseInt(difference / (1000) - (minutes * 60) - (days * 24 * 60 * 60) - (hours * 60 * 60));
 
-	    //const finalcountdown = days === 0 && hours === 0 && minutes === 0 && seconds <= 10;
-
 	    return {
-	      //passed: now > +date,
-	      //final: finalcountdown,
-
-	      //days: days,
-	      //hours: hours,
-	      //mins: mins,
-	      //secs: secs
-
 			days,
 			hours,
 			minutes,
