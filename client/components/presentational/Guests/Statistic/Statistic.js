@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
-import styles from '../GuestsPage.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes, faQuestion } from '@fortawesome/free-solid-svg-icons';
+import styles from './Statistic.css';
+
 
 const Statistic = props => {
 	let invitedGuests = 0;
@@ -24,29 +27,32 @@ const Statistic = props => {
 
 	return (
 		<Container className={styles.statistic}>
-			<Row className='flex-column'>
+			<Row>
 				<Col>
 					<div className={styles.figures}>
-						<h2>{invitedGuests}</h2>
+						<h4>{invitedGuests}</h4>
 						<p>Invited</p>
 					</div>
 				</Col>
 				<Col>
 					<div className={styles.figures}>
-    					<h2>{acceptedGuests}</h2>
+    					<h4>{acceptedGuests}</h4>
 						<p>Accepted</p>
+						<FontAwesomeIcon icon={faCheck} />
 					</div>
 				</Col>
 				<Col>
 					<div className={styles.figures}>
-    					<h2>{declinedGuests}</h2>
+    					<h4>{declinedGuests}</h4>
 						<p>Declined</p>
+						<FontAwesomeIcon icon={faTimes} />
 					</div>
 				</Col>
 				<Col>
 					<div className={styles.figures}>
-    					<h2>{noResponseGuests}</h2>
+    					<h4>{noResponseGuests}</h4>
 						<p>No<br /> response</p>
+						<FontAwesomeIcon icon={faQuestion} />
 					</div>
 				</Col>
 			</Row>

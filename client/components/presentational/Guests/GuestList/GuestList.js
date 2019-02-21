@@ -1,14 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Guest from './Guest';
+import styles from './GuestList.css';
 
 const GuestList = props => {
 	return (
-		<ul>
-			{props.guests.map(item => (
-				<Guest key={item._id} guest={item} />
-			))}
-		</ul>
+		<table>
+			<thead>
+				<tr>
+					<th>Guest' names</th>
+					<th>Relationship</th>
+					<th>Total members</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				{props.guests.map(item => (
+					<Guest key={item._id} guest={item} />
+				))}
+			</tbody>
+		</table>
 	);
 };
 
