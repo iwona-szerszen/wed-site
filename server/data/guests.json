@@ -79,7 +79,8 @@
 		"relationship": "family",
 		"totalMembers": 3,
 		"responded": true,
-		"attended": true
+		"attended": true,
+		"presents": ["5c3f573551a9ce233ca6a314"]
 	},
 	{
 		"_id": "5c3f3af3c88fdf27d4522125",
@@ -146,7 +147,7 @@
 		"relationship": "friends",
 		"totalMembers": 4,
 		"responded": false,
-		"presents": ["5c3f573551a9ce233ca6a312"],
+		"presents": ["5c3f573551a9ce233ca6a307", "5c3f573551a9ce233ca6a312"],
 		"dedications": ["51e0373c6f35bd826f47e9a7", "51e0373c6f35bd826f47e9a9", "51e0373c6f35bd826f47e9b0"]
 	},
 	{
