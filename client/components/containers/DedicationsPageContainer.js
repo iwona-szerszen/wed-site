@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, connect } from 'react-redux';
 
 // Import Components
-import DedicationList from '../presentational/Dedications/DedicationList/DedicationList';
+import DedicationsPage from '../presentational/Dedications/DedicationsPage';
 
 // Import Actions
 import { fetchDedicationsRequest } from '../../actions/DedicationActions';
@@ -22,10 +22,10 @@ class DedicationsPageContainer extends Component {
   }
   render() {
   	return (
-  		<div>
-        <button className='btn btn-outline-info' onClick={this.moveToAddDedication.bind(this)}>Add dedication</button>
-  			<DedicationList dedications={this.props.dedications} />
-  		</div>
+      <DedicationsPage
+        dedications={this.props.dedications}
+        moveToAddDedication={this.moveToAddDedication.bind(this)}
+      />
   	);
   }
 };
