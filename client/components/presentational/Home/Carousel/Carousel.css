@@ -20,3 +20,9 @@
 .carouselItem p:first-child {
 	font-size: 20px;
 }
+
+@media (max-width: 576px) {
+	.carouselItem p {
+		font-size: 17px;
+	}
+}
