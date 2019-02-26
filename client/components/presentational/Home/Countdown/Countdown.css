@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Euphoria+Script');
 
-/*
-#app {
-  display: flex;
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-}
-*/
-
 .countdownContainer {
   font-family: 'Euphoria Script', cursive;
   display: flex;
