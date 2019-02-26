@@ -4,9 +4,9 @@ import Dedication from './Dedication';
 
 const DedicationList = props => {
 	return (
-		<ul className='container'>
+		<div>
 			{props.dedications.map(item => <Dedication key={item._id} dedication={item} />)}
-		</ul>
+		</div>
 	);
 };
 
