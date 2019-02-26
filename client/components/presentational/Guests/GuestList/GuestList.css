@@ -7,12 +7,12 @@ table {
 	width: 100%;
 }
 
-th {
-	font-size: 17px
-}
-
 tr {
 	border: 1px solid #ccc;
+}
+
+tr th {
+	font-size: 17px
 }
 
 tr th:first-child,
@@ -31,8 +31,8 @@ tr td:nth-child(4) {
 	width: 10%;
 }
 
-th, 
-td {
+tr th, 
+tr td {
 	padding: 10px;
 }
 
@@ -46,7 +46,46 @@ tbody tr:hover {
 		margin-bottom: 15px;
 	}
 
-	th:nth-child(4) {
-		padding: 0px;
+	tr th:nth-child(4) {
+		padding: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	table {
+		font-size: 14px;
+	}
+
+	tr th {
+		font-size: 15px;
+	}
+
+	tr th:first-child,
+	tr td:first-child {
+		width: 37%;
+	}
+
+	tr th:nth-child(4),
+	tr td:nth-child(4) {
+		width: 12%;
+	}
+
+	tr th:nth-child(3),
+	tr th:nth-child(4) {
+		transform: rotate(-90deg);
+		text-align: center;
+	}
+
+	tr th {
+		height: 95px;
+	}
+
+	tr th:nth-child(2),
+	tr td:nth-child(2),
+	tr th:nth-child(3),
+	tr td:nth-child(3),
+	tr th:nth-child(4),
+	tr td:nth-child(4) {
+		padding: 0;
 	}
 }
