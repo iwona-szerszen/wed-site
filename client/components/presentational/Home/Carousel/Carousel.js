@@ -27,7 +27,7 @@ const Carousel = () => {
 			    />
 			    <RBCarousel.Caption>
 			    	<h3>Wedding on Santorini</h3>
-			    	<p>Our wedding will be taking place on beautiful Santorini. We fell in love with Santorini's culture, people, beaches and caldera during our travels and couldn't think of a better place to celebrate this special occasion. So mark your calendars because we would love for you to come celebrate with us!</p>
+			    	<p>Our wedding will be taking place on May 8, 2019 on beautiful Santorini. We fell in love with Santorini's culture, people, beaches and caldera during our travels and couldn't think of a better place to celebrate this special occasion.</p>
 			    </RBCarousel.Caption>
 			</RBCarousel.Item>
 			<RBCarousel.Item className={styles.carouselItem}>
@@ -68,7 +68,7 @@ export default Carousel;
 		},
 		{
 			title: 'Wedding on Santorini',
-			description: 'Our wedding will be taking place on beautiful Santorini. We fell in love with Santorini\'s culture, people, beaches and caldera during our travels and couldn\'t think of a better place to celebrate this special occasion. So mark your calendars because we would love for you to come celebrate with us!',
+			description: 'Our wedding will be taking place on beautiful Santorini. We fell in love with Santorini\'s culture, people, beaches and caldera during our travels and couldn\'t think of a better place to celebrate this special occasion.',
 			image: 'santorini.jpg',
 		},
 		{
