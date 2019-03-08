@@ -22,6 +22,10 @@
 	color: #D19E1B;
 }
 
+.userPresentList .presentCard:hover .name {
+	color: #17A2B8;
+}
+
 .presentCard img,
 .presentCardDisabled img {
 	width: 100%;
@@ -58,9 +62,13 @@
 	flex: 2;
 }
 
-.reserveButton {
+.reserveButton,
+.cancelButton {
 	border: none;
 	transition: all 0.3s ease-in-out;
+}
+
+.reserveButton {
 	background-color: #D19E1B;
 }
 
@@ -68,11 +76,23 @@
 	background-color: #FFCF40;
 }
 
-.presentList {
+.presentList,
+.userPresentList {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	margin: 0 -15px;
+}
+
+.presentList {
+	justify-content: space-between;
+}
+
+.userPresentList {
+	justify-content: center;
+}
+
+.userPresentList .presentCard {
+	margin-bottom: 30px;
 }
 
 @media (max-width: 992px) {

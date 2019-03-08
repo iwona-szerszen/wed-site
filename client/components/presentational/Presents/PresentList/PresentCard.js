@@ -51,9 +51,3 @@ PresentCard.propTypes = {
 };
 
 export default PresentCard;
-
-/*
-className='btn btn-primary'
-<button	className='btn btn-secondary' disabled>Reserved</button>
-
-*/
