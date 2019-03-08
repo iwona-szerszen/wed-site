@@ -1,8 +1,6 @@
 import Present from '../models/present';
 import Guest from '../models/guest';
 
-import mongoose from 'mongoose';
-
 // Get all presents
 export function getPresents(req, res) {
 	Present.find().exec((err, presents) => {

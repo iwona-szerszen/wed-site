@@ -16,7 +16,7 @@ export function getDedications(req, res) {
 
 // Add a new dedication
 export function addDedication(req, res) {
-	if (!req.body.dedication.song || !req.body.dedication.content || !req.body.dedication.from) {
+	if (!req.body.dedication.videoId || !req.body.dedication.song || !req.body.dedication.content || !req.body.dedication.from) {
 		res.status(403).end();
 	}
 
@@ -24,6 +24,7 @@ export function addDedication(req, res) {
 	newDedication._id = new mongoose.Types.ObjectId();
 
 	// Sanitize inputs
+	newDedication.videoId = sanitizeHtml(newDedication.videoId);
 	newDedication.song = sanitizeHtml(newDedication.song);
 	newDedication.content = sanitizeHtml(newDedication.content);
 	newDedication.from = sanitizeHtml(newDedication.from);
@@ -33,7 +34,6 @@ export function addDedication(req, res) {
 			res.status(500).send(err);
 		}
 
-		//Guest.findOneAndUpdate({ _id: req.body.dedication.from }, { $push: { dedications: dedicationSaved }}, {new: true})
 		Guest.findOneAndUpdate({ _id: req.body.dedication.from }, { $push: { dedications: { $each: [dedicationSaved], $position: 0 } }}, {new: true})
 			.then(guestUpdated => res.json(guestUpdated))
 			.catch(err => res.status(500).send(err));
@@ -56,20 +56,3 @@ export function deleteDedication(req, res) {
 			.catch(err => res.status(500).send(err));
 	});
 }
-
-
-
-
-
-
-
-// Edit a dedication by id
-export function editDedication(req, res) {
-	Dedication.findOneAndUpdate({ _id: req.params.id }, req.body.dedication, {new: true}).exec((err, updated) => {
-		if (err) {
-			res.status(500).send(err);
-		}
-		res.json(updated);
-	});
-}
-
