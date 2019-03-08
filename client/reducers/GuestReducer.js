@@ -1,11 +1,20 @@
 import { LOAD_GUESTS, LOAD_GUEST, EDIT_GUEST } from '../actions/GuestActions';
 import { CANCEL_PRESENT_RESERVATION } from '../actions/PresentActions';
-import { ADD_DEDICATION, EDIT_DEDICATION, DELETE_DEDICATION } from '../actions/DedicationActions';
+import { ADD_DEDICATION, DELETE_DEDICATION } from '../actions/DedicationActions';
 
 // Initial State
 const initialState = { 
 	data: [],
-	userGuest: {},
+	userGuest: {
+		_id: '',
+		names: '',
+		relationship: '',
+		totalMembers: 0,
+		responded: false,
+		attended: false,
+		presents: [],
+		dedications: [],
+	},
 };
 
 const GuestReducer = (state = initialState, action) => {
@@ -17,20 +26,8 @@ const GuestReducer = (state = initialState, action) => {
 		case CANCEL_PRESENT_RESERVATION:
 		case EDIT_GUEST:
 		case ADD_DEDICATION:
-		case EDIT_DEDICATION:
 		case DELETE_DEDICATION:
 			return Object.assign({}, state, {userGuest: action.guestUpdated});
-		
-
-		/*
-		case EDIT_GUEST:
-			return {
-				data: state.data.map(guest => {
-					return guest.id === action.id ? Object.assign({}, guest, action.guest) : guest;
-				}),
-			};
-		*/
-
 		default:
 			return state;
 	}

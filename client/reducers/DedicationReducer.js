@@ -1,4 +1,4 @@
-import { ADD_DEDICATIONS, ADD_DEDICATION, EDIT_DEDICATION, DELETE_DEDICATION } from '../actions/DedicationActions';
+import { ADD_DEDICATIONS, ADD_DEDICATION, DELETE_DEDICATION } from '../actions/DedicationActions';
 
 // Initial State
 const initialState = { data: [] };
@@ -18,20 +18,6 @@ const DedicationReducer = (state = initialState, action) => {
 			return {
 				data: state.data.filter(dedication => dedication._id !== action.dedicationId),
 			};
-
-
-
-
-
-
-/*
-		case EDIT_DEDICATION:
-			return {
-				data: state.data.map(dedication => {
-					return dedication.id === action.id ? Object.assign({}, dedication, action.dedication) : dedication;
-				}),
-			};
-*/
 		default:
 			return state;
 	}
@@ -41,12 +27,3 @@ const DedicationReducer = (state = initialState, action) => {
 export const getDedications = state => state.dedications.data;
 
 export default DedicationReducer;
-
-/*
-
-
-Selectors
-
-// Get post by cuid
-export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];
-*/
