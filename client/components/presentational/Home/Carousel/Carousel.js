@@ -27,7 +27,7 @@ const Carousel = () => {
 			    />
 			    <RBCarousel.Caption>
 			    	<h3>Wedding on Santorini</h3>
-			    	<p>Our wedding will be taking place on May 8, 2019 on beautiful Santorini. We fell in love with Santorini's culture, people, beaches and caldera during our travels and couldn't think of a better place to celebrate this special occasion.</p>
+			    	<p>Our wedding will be taking place on July 27, 2019 on beautiful Santorini. We fell in love with Santorini's culture, people, beaches and caldera during our travels and couldn't think of a better place to celebrate this special occasion.</p>
 			    </RBCarousel.Caption>
 			</RBCarousel.Item>
 			<RBCarousel.Item className={styles.carouselItem}>
@@ -57,48 +57,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
-/*
-
-	const carouselContent = [
-		{
-			title: '',
-			description: 'Welcome to our wedding website! Thank you so much for visiting! This is the place you\'ll find a piece of information you will need regarding our wedding celebration :)',
-			image: 'couple.jpg',
-		},
-		{
-			title: 'Wedding on Santorini',
-			description: 'Our wedding will be taking place on beautiful Santorini. We fell in love with Santorini\'s culture, people, beaches and caldera during our travels and couldn\'t think of a better place to celebrate this special occasion.',
-			image: 'santorini.jpg',
-		},
-		{
-			title: 'Ceremony',
-			description: 'The Catholic wedding ceremony is held in Saint John the Baptist\'s Cathedral in Fira at 5 p.m. The church is located near the main square, in a fantastic spot with an extraordinary view to Aegean Sea.',
-			image: 'church.jpg',
-		},
-		{
-			title: 'Reception',
-			description: 'After ceremony we all go to Dana Villas in Firostefani (5 minutes drive from the church - shuttles will be available to transport guests) to celebrate our union with delicious food and, of course, plenty of wine ;)',
-			image: 'reception.jpg',
-		},
-	];
-
-	return (
-		<RBCarousel>
-			{carouselContent.map((item, index) => (
-				<RBCarousel.Item key={index}>
-				    <img
-				    	className='d-block w-100'
-				    	height={400}
-				    	src={require(`../../../../../assets/images/${item.image}`)}
-						alt={item.image.substring(0, item.image.length - 4)}
-				    />
-				    <RBCarousel.Caption>
-				    	<h3>{item.title}</h3>
-				    	<p>{item.description}</p>
-				    </RBCarousel.Caption>
-				</RBCarousel.Item>
-			))}
-		</RBCarousel>
-	);
-*/
