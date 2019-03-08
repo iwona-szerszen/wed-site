@@ -6,12 +6,6 @@ export const RESERVE_PRESENT = 'RESERVE_PRESENT';
 export const CANCEL_PRESENT_RESERVATION = 'CANCEL_PRESENT_RESERVATION';
 
 // Export Actions
-export function fetchPresentsRequest() {
-	return dispatch => {
-		return callApi('presents').then(res => dispatch(addPresents(res)));
-	};
-}
-
 export function addPresents(presents) {
 	return {
 		type: ADD_PRESENTS,
@@ -19,10 +13,9 @@ export function addPresents(presents) {
 	};
 }
 
-export function reservePresentRequest(presentId, guestId) {
+export function fetchPresentsRequest() {
 	return dispatch => {
-		return callApi(`presents/${presentId}/reserve`, 'put', { guestId })
-			.then(res => dispatch(reservePresent(res, guestId)));
+		return callApi('presents').then(res => dispatch(addPresents(res)));
 	};
 }
 
@@ -34,10 +27,10 @@ export function reservePresent(present, guestId) {
 	};
 }
 
-export function cancelPresentReservationRequest(presentId, guestId) {
+export function reservePresentRequest(presentId, guestId) {
 	return dispatch => {
-		return callApi(`presents/${presentId}/cancel`, 'put', { guestId })
-			.then(res => dispatch(cancelPresentReservation(presentId, res)));
+		return callApi(`presents/${presentId}/reserve`, 'put', { guestId })
+			.then(res => dispatch(reservePresent(res, guestId)));
 	};
 }
 
@@ -46,5 +39,12 @@ export function cancelPresentReservation(presentId, guestUpdated) {
 		type: CANCEL_PRESENT_RESERVATION,
 		presentId,
 		guestUpdated,
+	};
+}
+
+export function cancelPresentReservationRequest(presentId, guestId) {
+	return dispatch => {
+		return callApi(`presents/${presentId}/cancel`, 'put', { guestId })
+			.then(res => dispatch(cancelPresentReservation(presentId, res)));
 	};
 }

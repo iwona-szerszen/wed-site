@@ -6,12 +6,6 @@ export const LOAD_GUEST = 'LOAD_GUEST';
 export const EDIT_GUEST = 'EDIT_GUEST';
 
 // Export Actions
-export function fetchGuestsRequest() {
-	return dispatch => {
-		return callApi('guests').then(res => dispatch(loadGuests(res)));
-	};
-}
-
 export function loadGuests(guests) {
 	return {
 		type: LOAD_GUESTS,
@@ -19,9 +13,9 @@ export function loadGuests(guests) {
 	};
 }
 
-export function fetchGuestRequest(id) {
+export function fetchGuestsRequest() {
 	return dispatch => {
-		return callApi(`guests/${id}`).then(res => dispatch(loadGuest(res)));
+		return callApi('guests').then(res => dispatch(loadGuests(res)));
 	};
 }
 
@@ -32,15 +26,9 @@ export function loadGuest(guest) {
 	};
 }
 
-export function editGuestRequest(id, guest) {
+export function fetchGuestRequest(id) {
 	return dispatch => {
-		return callApi(`guests/${id}`, 'put', {
-			guest: {
-				totalMembers: guest.totalMembers,
-				responded: guest.responded,
-				attended: guest.attended,
-			},
-		}).then(res => dispatch(editGuest(res)));
+		return callApi(`guests/${id}`).then(res => dispatch(loadGuest(res)));
 	};
 }
 
@@ -48,5 +36,16 @@ export function editGuest(guestUpdated) {
 	return {
 		type: EDIT_GUEST,
 		guestUpdated,
+	};
+}
+
+export function editGuestRequest(id, guest) {
+	return dispatch => {
+		return callApi(`guests/${id}`, 'put', {
+			guest: {
+				responded: guest.responded,
+				attended: guest.attended,
+			},
+		}).then(res => dispatch(editGuest(res)));
 	};
 }
