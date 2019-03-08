@@ -104,7 +104,9 @@
 		"_id": "5c3f3af3c88fdf27d4522128",
 		"names": "Sophia & Frederick Robinson with child",
 		"relationship": "family",
-		"totalMembers": 3
+		"totalMembers": 3,
+		"responded": true,
+		"attended": true
 	},
 	{
 		"_id": "5c3f3af3c88fdf27d4522129",
@@ -206,6 +208,8 @@
 		"_id": "5c3f3af3c88fdf27d4522142",
 		"names": "Alice Evans & Daniel Wilson",
 		"relationship": "friends",
-		"totalMembers": 2
+		"totalMembers": 2,
+		"responded": true,
+		"attended": false
 	}
 ]
