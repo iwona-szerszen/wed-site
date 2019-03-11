@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Guest from './Guest';
-import styles from './GuestList.css';
+import './GuestList.css';
 
 const GuestList = props => {
 	return (

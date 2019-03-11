@@ -11,18 +11,14 @@ import { fetchGuestsRequest } from '../../actions/GuestActions';
 // Import Selector
 import { getGuests } from '../../reducers/GuestReducer';
 
-class GuestsPageContainer extends Component {	
+class GuestsPageContainer extends Component {
   componentDidMount() {
     this.props.dispatch(fetchGuestsRequest());
-  }
-  moveToConfirmPresence() {
-    return;
   }
   render() {
   	return (
       <GuestsPage 
         guests={this.props.guests}
-        moveToConfirmPresence={this.moveToConfirmPresence.bind(this)}
       />
   	);
   }

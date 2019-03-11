@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faQuestion } from '@fortawesome/free-solid-svg-icons';
-import styles from './GuestList.css';
+import './GuestList.css';
 
 const Guest = props => {
 
