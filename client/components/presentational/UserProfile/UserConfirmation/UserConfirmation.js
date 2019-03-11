@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './UserConfirmation.css';
 
 class UserConfirmation extends Component {
-	constructor(props) {
-		super(props);
-	}
-	renderConfirmPresence() {
+	renderConfirmPresenceForm() {	
 		return (
-			<form onSubmit={event => props.onSubmitConfirmPresence(event)}>
+			<form
+				onSubmit={event => this.props.onSubmitConfirmPresence(event)}
+				className={styles.formContainer}
+			>
 				<div className='form-group row'>
-	            	<label htmlFor='names' className='col-sm-3 col-form-label'>Names</label>
-	            	<div className='col-sm-9'>
+	            	<label htmlFor='names' className='col-sm-4 col-form-label'>Name</label>
+	            	<div className='col-sm-8'>
 	            		<input
 	                  		type='text'
 	                  		className='form-control'
@@ -20,13 +21,25 @@ class UserConfirmation extends Component {
 	                	/>
 	              	</div>
 	            </div>
+	            <div className='form-group row'>
+	            	<label htmlFor='total-members' className='col-sm-4 col-form-label'>Total members</label>
+	            	<div className='col-sm-8'>
+	            		<input
+	                  		type='number'
+	                  		className='form-control'
+	                  		id='total-members'
+	                  		value={this.props.user.totalMembers}
+	                  	    disabled           		
+	                   	/>
+	              	</div>
+	            </div>
 	            <div className='form-group'>
 		            <div className='custom-control custom-radio'>
 						<input
 							type='radio'
 							value='true'
 							onChange={event => this.props.onChangePresenceInput(event)}
-							checked={this.props.presenceForm.userAttended == 'true'} 
+							checked={this.props.presenceForm.userAttended === 'true'}
 							className='custom-control-input'
 							id='attended'
 							name='userAttended'
@@ -43,7 +56,7 @@ class UserConfirmation extends Component {
   							type='radio'
   							value='false'
   							onChange={event => this.props.onChangePresenceInput(event)}
-  							checked={this.props.presenceForm.userAttended == 'false'}
+  							checked={this.props.presenceForm.userAttended === 'false'}
   							className='custom-control-input'
   							id='notAttended'
   							name='userAttended'
@@ -54,27 +67,10 @@ class UserConfirmation extends Component {
   						</label>
 					</div>
 				</div>
-	            <div className='form-group row'>
-	            	<label htmlFor='total-members' className='col-sm-3 col-form-label'>Total members</label>
-	            	<div className='col-sm-9'>
-	            		<input
-	                  		type='number'
-	                  		value={this.props.presenceForm.userTotalMembers}
-	                  		onChange={event => this.props.onChangePresenceInput(event)}
-	                  		className='form-control'
-	                  		name='userTotalMembers'
-	                  		id='total-members'
-	                  		ref='totalMembers'
-	                  		min='1'
-	                  		max={this.props.user.totalMembers}
-	                  		step='1'
-	                  		required
-	                	/>
-	              	</div>
-	            </div>
+
 	            <div className='form-group row'>
 		            <div className='col-sm-12'>
-		            	<button className='btn btn-success'>Send</button>
+		            	<button className='btn btn-success float-right'>Send</button>
 		            </div>
 		        </div>
 			</form>
@@ -82,13 +78,17 @@ class UserConfirmation extends Component {
 	}
 	renderEditConfirmation() {
 		return (
-			<div>Edit</div>
+			<div className={styles.editConfirmationInfo}>
+				<div>You have informed us about your presence at the wedding. If you really have to edit your confirmation you can do this sending form below, but only until June 30, 2019. </div>
+				{this.renderConfirmPresenceForm()}
+			</div>
+
 		);
 	}
 	render() {
 		return (
 			<div>
-				{this.props.user.responded ? this.renderEditConfirmation() : this.renderConfirmPresence()}
+				{this.props.user.responded ? this.renderEditConfirmation() : this.renderConfirmPresenceForm()}
 			</div>
 		);
 	}
@@ -99,101 +99,6 @@ UserConfirmation.propTypes = {
 	presenceForm: PropTypes.object,
 	onSubmitConfirmPresence: PropTypes.func,
 	onChangePresenceInput: PropTypes.func,
-	//onSubmitEditConfirmation: PropTypes.func,
 };
 
 export default UserConfirmation;
-
-/*
-
-class UserConfirmation extends Component {
-	onSubmitConfirmPresence(event) {
-	    const presenceConfirmationRef = this.refs.presenceConfirmation;
-	    const totalMembersRef = this.refs.totalMembers;
-	    if (totalMembersRef.value) {
-	    	console.log(presenceConfirmationRef.checked);
-	    	this.props.onSubmitConfirmPresence(event, presenceConfirmationRef.checked, totalMembersRef.value);
-	    }
-	}
-	renderConfirmPresence() {
-		return (
-			<form onSubmit={event => this.onSubmitConfirmPresence(event)}>
-				<div className='form-group row'>
-	            	<label htmlFor='names' className='col-sm-3 col-form-label'>Names</label>
-	            	<div className='col-sm-9'>
-	            		<input
-	                  		type='text'
-	                  		className='form-control'
-	                  		id='names'
-	                   		value={this.props.user.names}
-	                   		disabled
-	                	/>
-	              	</div>
-	            </div>
-	            <div className='form-group'>
-		            <div className='custom-control custom-radio'>
-						<input
-							type='radio'
-							className='custom-control-input'
-							id='attended'
-							name='presence-confirmation'
-							ref='presenceConfirmation'
-							required
-						/>
-						<label
-							className='custom-control-label'
-							htmlFor='attended'>Yes, I am going to attended the wedding ceremony
-						</label>
-					</div>
-					<div className='custom-control custom-radio'>
-  						<input
-  							type='radio'
-  							className='custom-control-input'
-  							id='notAttended'
-  							name='presence-confirmation'
-  						/>
-  						<label
-  							className='custom-control-label'
-  							htmlFor='notAttended'>No, I will not be able to attended the wedding ceremony
-  						</label>
-					</div>
-				</div>
-	            <div className='form-group row'>
-	            	<label htmlFor='total-members' className='col-sm-3 col-form-label'>Total members</label>
-	            	<div className='col-sm-9'>
-	            		<input
-	                  		type='number'
-	                  		className='form-control'
-	                  		id='total-members'
-	                  		ref='totalMembers'
-	                  		min='1'
-	                  		max={this.props.user.totalMembers}
-	                  		step='1'
-	                  		defaultValue={this.props.user.totalMembers}
-	                  		required
-	                	/>
-	              	</div>
-	            </div>
-	            <div className='form-group row'>
-		            <div className='col-sm-12'>
-		            	<button className='btn btn-success'>Send</button>
-		            </div>
-		        </div>
-			</form>
-		);
-	}
-	renderEditConfirmation() {
-		return (
-			<div>Edit</div>
-		);
-	}
-	render() {
-		return (
-			<div>
-				{this.props.user.responded ? this.renderEditConfirmation() : this.renderConfirmPresence()}
-			</div>
-		);
-	}
-};
-
-*/
