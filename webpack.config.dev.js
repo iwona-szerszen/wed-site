@@ -24,7 +24,7 @@ module.exports = {
     path: __dirname,
     filename: 'app.js',
     //publicPath: 'http://0.0.0.0:8000/',
-    //changed to image loading correctly
+    //changed to load images correctly
     publicPath: 'http://localhost:8000/',
   },
 

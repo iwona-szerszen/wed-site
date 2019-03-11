@@ -44,11 +44,9 @@ import Helmet from 'react-helmet';
 // Import required modules
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
-//import posts from './routes/post.routes';
 import guests from './routes/guest.routes';
 import presents from './routes/present.routes';
 import dedications from './routes/dedication.routes';
-//import dummyData from './dummyData';
 import dummyData from './data/dummyData';
 import serverConfig from './config';
 
@@ -56,8 +54,12 @@ import serverConfig from './config';
 mongoose.Promise = global.Promise;
 
 // MongoDB Connection
+const options = {
+  useMongoClient: true,
+};
+
 if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect(serverConfig.mongoURL, (error) => {
+  mongoose.connect(serverConfig.mongoURL, options, (error) => {
     if (error) {
       console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
       throw error;
@@ -73,7 +75,6 @@ app.use(compression());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist/client')));
-//app.use('/api', posts);
 app.use('/api', guests);
 app.use('/api', presents);
 app.use('/api', dedications);
@@ -95,12 +96,11 @@ const renderFullPage = (html, initialState) => {
         ${head.meta.toString()}
         ${head.link.toString()}
         ${head.script.toString()}
-
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous'>
         ${isProdMode ? `<link rel='stylesheet' href='${assetsManifest['/app.css']}' />` : ''}
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">      </head>
+      </head>
       <body>
-        <div id="root">${process.env.NODE_ENV === 'production' ? html : `<div>${html}</div>`}</div>
+        <div id='root'>${process.env.NODE_ENV === 'production' ? html : `<div>${html}</div>`}</div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
           ${isProdMode ?
@@ -110,9 +110,6 @@ const renderFullPage = (html, initialState) => {
         </script>   
         <script src='${isProdMode ? assetsManifest['/vendor.js'] : '/vendor.js'}'></script>
         <script src='${isProdMode ? assetsManifest['/app.js'] : '/app.js'}'></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>        
       </body>
     </html>
   `;
@@ -121,7 +118,7 @@ const renderFullPage = (html, initialState) => {
 const renderError = err => {
   const softTab = '&#32;&#32;&#32;&#32;';
   const errTrace = isProdMode ?
-    `:<br><br><pre style="color:red">${softTab}${err.stack.replace(/\n/g, `<br>${softTab}`)}</pre>` : '';
+    `:<br><br><pre style='color:red'>${softTab}${err.stack.replace(/\n/g, `<br>${softTab}`)}</pre>` : '';
   return renderFullPage(`Server Error${errTrace}`, {});
 };
 
