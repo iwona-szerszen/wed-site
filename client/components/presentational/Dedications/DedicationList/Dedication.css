@@ -54,6 +54,22 @@
 	text-align: right;
 }
 
+.userDedicationContainer {
+	margin-right: -12px;
+}
+
+.closeButton {
+	position: relative;
+	left: -20px;
+	z-index: 2;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+	background: transparent;
+}
+
+
 @media (max-width: 768px) {
 	.dedicationContainer:first-child {
 		margin-top: 65px;
@@ -78,9 +94,15 @@
 	.dedication {
 		padding-top: 25px;
 	}
+
 	.video {
 		top: 0;
 		left: -15px;
 		width: 290px;
+	}
+
+	.closeButton {
+		left: calc(-50vw + 150px);
+		top: 200px;
 	}
 }
