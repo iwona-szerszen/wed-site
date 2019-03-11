@@ -14,9 +14,10 @@ const DedicationsPage = props => {
 				</section>
 				<button	
 					className={styles.addDedicationButton}
-					onClick={props.moveToAddDedication}>
-						Add music dedication
-						<span className={styles.arrow}>❯</span>
+					onClick={props.moveToAddDedication}
+				>
+					Add music dedication
+					<span className={styles.arrow}>❯</span>
 				</button>
 	  			<DedicationList dedications={props.dedications} />
 	  		</div>
@@ -30,3 +31,15 @@ DedicationsPage.propTypes = {
 }
 
 export default DedicationsPage;
+
+/*
+				<Link to={`/guests/${testGuestId}`}>
+					<button	
+						className={styles.addDedicationButton}
+						onClick={props.moveToAddDedication}
+					>
+						Add music dedication
+						<span className={styles.arrow}>❯</span>
+					</button>
+				</Link>
+*/

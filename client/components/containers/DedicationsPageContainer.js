@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link, connect } from 'react-redux';
+import { connect } from 'react-redux';
+
+import { testGuestId } from '../../../server/config';
 
 // Import Components
 import DedicationsPage from '../presentational/Dedications/DedicationsPage';
@@ -11,14 +13,15 @@ import { fetchDedicationsRequest } from '../../actions/DedicationActions';
 // Import Selector
 import { getDedications } from '../../reducers/DedicationReducer';
 
-import { testGuestId } from '../../../server/config';
-
 class DedicationsPageContainer extends Component {	
   componentDidMount() {
     this.props.dispatch(fetchDedicationsRequest());
   }
   moveToAddDedication() {
-    return;
+    this.context.router.push({
+      pathname: `/guests/${testGuestId}`,
+      state: {activeTabKey: 'dedications'},
+    });
   }
   render() {
   	return (
@@ -50,20 +53,3 @@ DedicationsPageContainer.contextTypes = {
 };
 
 export default connect(mapStateToProps)(DedicationsPageContainer);
-
-/*
-<Link to={`/guests/${testGuestId}`>
-  <button onClick={this.moveToAddDedication.bind(this)}>Add dedication</button>
-</Link>
-*/
-
-//moveToAddDedication(dispatch(changeActiveTab(tab)))
-
-/*
-  moveToAddDedication() {
-    this.context.router.push({
-      pathname: `/guests/${testGuestId}`,
-      state: {activeTabKey: 'dedications'},
-    });
-  }
-*/
