@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 class AddDedication extends Component {
   onSubmitAddDedication(event) {
+    const videoIdRef = this.refs.videoId;
     const songRef = this.refs.song;
     const contentRef = this.refs.content;
-    if (songRef.value && contentRef.value) {
-      this.props.onSubmitAddDedication(event, songRef.value, contentRef.value);
-      songRef.value = contentRef.value = '';
+    if (videoIdRef.value && songRef.value && contentRef.value) {
+      this.props.onSubmitAddDedication(event, videoIdRef.value, songRef.value, contentRef.value);
+      videoIdRef.value = songRef.value = contentRef.value = '';
     }
   }
   render() {
@@ -16,6 +17,19 @@ class AddDedication extends Component {
         <h4>Add new dedication</h4>
         <form onSubmit={event => this.onSubmitAddDedication(event)}>
             <div className='form-group row'>
+              <label htmlFor='videoId' className='col-sm-2 col-form-label'>Video's id</label>
+              <div className='col-sm-10'>
+                <input
+                  type='text'
+                  className='form-control'
+                  id='videoId'
+                  ref='videoId'
+                  placeholder={`video's id of dedicated song from YouTube`}
+                  required
+                />
+              </div>
+            </div>        
+            <div className='form-group row'>
               <label htmlFor='song' className='col-sm-2 col-form-label'>Song</label>
               <div className='col-sm-10'>
                 <input
@@ -23,7 +37,7 @@ class AddDedication extends Component {
                   className='form-control'
                   id='song'
                   ref='song'
-                  placeholder='author and title of the song'
+                  placeholder='author and title of dedicated song'
                   required
                 />
               </div>
@@ -42,7 +56,7 @@ class AddDedication extends Component {
             </div>
             <div className='form-group row'>
               <div className='col-sm-12'>
-                  <button className='btn btn-success'>Submit</button>
+                  <button className='btn btn-success float-right'>Submit</button>
               </div>
             </div>
           </form>     

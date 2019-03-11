@@ -1,25 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import Dedication from '../../Dedications/DedicationList/Dedication';
+import styles from '../../Dedications/DedicationList/Dedication.css';
+import userStyles from '../UserProfile.css';
 
 const UserDedicationList = props => {
 	if (!props.userDedications.length) {
 		return (
-			<div>You do not have any music dedication.</div>
+			<div className={userStyles.noItemInfo}>You have no music dedication.</div>
 		);
 	} else {
 		return (
-			<ul>
+			<div>
 				{props.userDedications.map(item => (
-					<li key={item._id}>
-						<button className="close" onClick={() => props.deleteDedication(item._id)} aria-label="Close">
-  							<span aria-hidden="true">&times;</span>
-						</button>
-						<div>Song: {item.song}</div>
-						<div>Content: {item.content}</div>
-						<hr />
-					</li>
+					<div key={item._id} className={styles.userDedicationContainer}>
+						<Button 
+							className={`close ${styles.closeButton}`} 
+							onClick={() => props.deleteDedication(item._id)} 
+							aria-label='Close'>
+  								<span aria-hidden='true'>&times;</span>
+						</Button>
+						<Dedication key={item._id} dedication={item} />
+					</div>
 				))}
-			</ul>
+			</div>
 		);
 	}
 };
