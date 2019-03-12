@@ -31,15 +31,3 @@ DedicationsPage.propTypes = {
 }
 
 export default DedicationsPage;
-
-/*
-				<Link to={`/guests/${testGuestId}`}>
-					<button	
-						className={styles.addDedicationButton}
-						onClick={props.moveToAddDedication}
-					>
-						Add music dedication
-						<span className={styles.arrow}>❯</span>
-					</button>
-				</Link>
-*/
