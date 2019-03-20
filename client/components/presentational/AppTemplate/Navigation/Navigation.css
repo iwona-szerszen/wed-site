@@ -1,5 +1,5 @@
 .navContainer {
-	background: #fff url(../../../../../assets/images/gold.jpg) 0/cover;
+	background: #fff url('../../../../../assets/images/gold.jpg') 0/cover;
 	width: 100%;
 	box-shadow: 0 3px 10px #777;
 	position: relative;
