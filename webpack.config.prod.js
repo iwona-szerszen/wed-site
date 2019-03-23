@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
@@ -116,6 +117,14 @@ module.exports = {
       filename: "chunk-manifest.json",
       manifestVariable: "webpackManifest",
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new UglifyJsPlugin({
+      sourceMap: true,
+      uglifyOptions: {
+        ecma:8,  
+        compress: {
+          warnings: false
+        }
+      }
+    }),
   ],
 };
