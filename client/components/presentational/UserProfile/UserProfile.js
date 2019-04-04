@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Tab, Nav } from 'react-bootstrap';
 import UserConfirmation from './UserConfirmation/UserConfirmation';
 import UserPresentList from './UserPresents/UserPresentList';
-import AddDedication from './UserDedications/AddDedication';
+import AddDedication from './UserDedications/AddDedication/AddDedication';
 import UserDedicationList from './UserDedications/UserDedicationList';
 import styles from './UserProfile.css';
 	

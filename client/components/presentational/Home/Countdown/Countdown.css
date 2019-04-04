@@ -9,7 +9,7 @@
 }
 
 .countdownUnit {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 600;
   text-align: center;
   padding-bottom: 5px;
@@ -22,9 +22,8 @@
   height: 60px;
   perspective-origin: 50% 50%;
   perspective: 200px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0px 10px 10px -10px grey;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px -8px grey;
 }
 
 .upperCard,
@@ -35,8 +34,9 @@
   width: 100%;
   height: 50%;
   overflow: hidden;
-  border: 1px solid whitesmoke;
+  border: 0.5px solid #ccc;
 }
+
 .upperCard span,
 .lowerCard span {
   font-size: 3.2em;
@@ -46,9 +46,8 @@
 .upperCard {
   align-items: flex-end;
   border-bottom: 0.5px solid whitesmoke;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
+
 .upperCard span {
   transform: translateY(50%);
 }
@@ -56,9 +55,8 @@
 .lowerCard {
   align-items: flex-start;
   border-top: 0.5px solid whitesmoke;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
+
 .lowerCard span {
   transform: translateY(-50%);
 }
@@ -73,35 +71,36 @@
   overflow: hidden;
   backface-visibility: hidden;
 }
+
 .flipCard span {
   font-size: 3.2em;
   color: #333333;
 }
+
 .flipCard.unfold {
   top: 50%;
   align-items: flex-start;
   transform-origin: 50% 0%;
   transform: rotateX(180deg);
   background-color: white;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border: 1px solid whitesmoke;
+  border: 0.5px solid #ccc;
   border-top: 0.5px solid whitesmoke;
 }
+
 .flipCard.unfold span {
   transform: translateY(-50%);
 }
+
 .flipCard.fold {
   top: 0%;
   align-items: flex-end;
   transform-origin: 50% 100%;
   transform: rotateX(0deg);
   background-color: white;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border: 0.5px solid whitesmoke;
+  border: 0.5px solid #ccc;
   border-bottom: 0.5px solid whitesmoke;
 }
+
 .flipCard.fold span {
   transform: translateY(50%);
 }

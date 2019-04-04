@@ -1,8 +1,8 @@
 .containerFluid {
-	background: url('../../../../assets/images/goldBg.jpg') 0/cover fixed;
-	min-height: calc(100vh - 100px);
+	min-height: calc(100vh - 170px);
 	height: 100%;
 }
+
 .container {
 	max-width: 960px;
 	width: 100%;
@@ -13,40 +13,40 @@
 .tabNavigation {
 	display: flex;
 	justify-content: flex-end;
-	margin: 0 0 30px -10px;
+	margin: 0 0 40px -10px;
 }
 
 .tabNavigation a {
-	color: #800020;
+	color: #116355;
 	font-size: 17px;
 	border: 1px solid;
+	border-radius: 0 !important;
 	margin-left: 10px;
 }
 
 .tabNavigation [class*='active'] {
-	background-color: #800020 !important;
-	border: none;
+	background-color: #116355 !important;
 }
 
 .dividingLine {
-	box-shadow: 0px 1px 3px #000;
+	background-color: #a6a6a6;
+	border-color: #a6a6a6;
 	margin-top: 40px;
 }
 
 .noItemInfo {
 	font-size: 17px;
-	margin-bottom: 20px;
+	margin: 30px 0 20px;
 }
 
 .noItemInfo a {
-	color: #800020;
+	color: #116355;
 	font-weight: bold;
 	font-size: 18px;
 }
 
 .noItemInfo a:hover {
-	color: #fff;
-	text-shadow: 1px 1px 3px #000;
+	color: #737373;
 	text-decoration: none;
 }
 
@@ -66,10 +66,6 @@
 }	
 
 @media (max-width: 576px) {
-	.container {
-		padding-top: 15px;
-	}
-	
 	.tabNavigation {
 		flex-direction: column;
 		display: inline-block;
@@ -79,5 +75,9 @@
 	.tabNavigation a {
 		font-size: 16px;
 		margin: 0 0 10px;
+	}
+	
+	.noItemInfo {
+		margin: 0 0 20px;
 	}
 }

@@ -1,11 +1,7 @@
 footer {
-	background: #fff url('../../../../../assets/images/gold.jpg') 0/cover;
-	height: 50px;
-	line-height: 50px;
+	height: 80px;
+	line-height: 80px;
 	text-align: center;
-	box-shadow: 0 -4px 10px #777;
-	position: relative;
-	z-index: 1;
 }
 
 footer a {
@@ -14,6 +10,14 @@ footer a {
 }
 
 footer a:hover {
-	color: #fff;
+	color: #545454;
 	text-decoration: none;
+}
+
+
+@media (max-width: 576px) {
+	footer {
+		height: 50px;
+		line-height: 50px;
+	}
 }

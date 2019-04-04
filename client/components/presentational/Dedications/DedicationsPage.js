@@ -6,7 +6,7 @@ import styles from './DedicationsPage.css';
 
 const DedicationsPage = props => {
 	return (
-		<Container fluid className={styles.containerFluid}>
+		<Container fluid>
 			<div className={styles.container}>
 				<section className={styles.introduction}>
 					<p>What songs would you like to hear at our wedding reception? We want to know your music preferences - there will be no excuses for not dancing at the party!</p>

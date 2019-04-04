@@ -1,10 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Euphoria+Script');
-
-.containerFluid {
-	background: url('../../../../assets/images/goldBg.jpg') 0/cover fixed;
-	height: 100%;
-}
-
 .container {
 	max-width: 960px;
 	width: 100%;
@@ -13,13 +6,9 @@
 }
 
 .introduction {
-	background-color: rgba(166, 124, 0, 0.6);
-	color: #fff;
-	font-family: 'Euphoria Script', cursive;
-	font-size: 24px;
-	letter-spacing: 1px;
+	font-size: 18px;
+	color: #545454;
 	text-align: justify;
-	padding: 15px;
 	margin-bottom: 30px;
 }
 
@@ -29,13 +18,12 @@
 
 .addDedicationButton {
 	display: inline-block;
-	background-color: #A67C00;
+	background-color: #116355;
 	border: none;
 	outline: none;
 	line-height: 2.5em;
 	padding: 0 0 0 1em;
 	color: #fff;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	font-weight: 500;
 	font-size: 17px;
@@ -61,36 +49,25 @@
 	left: 0;
 	width: 100%;
 	content: '❯';
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #0b453b;
 }
 
-.addDedicationButton:hover {
-	background-color: #FBFCD4;
-	color: #A67C00;
+.addDedicationButton:hover,
+.addDedicationButton:active {
+	background-color: #fcfcfc;
+	color: #116355;
+	outline: 1px solid #116355;
 }
 
 .addDedicationButton:hover .arrow {
 	margin-left: 1.4em;
-	background-color: #A67C00;
-}
-
-.addDedicationButton:active {
-	background-color: #fff;
 }
 
 .addDedicationButton:active .arrow {
 	margin-left: 1.6em;
 }
 
-.addDedicationButton:focus {
-	outline: none;
-}
-
 @media (max-width: 768px) {
-	.container {
-		padding-top: 15px;
-	}
-
 	.introduction {
 		margin-bottom: 15px;
 	}

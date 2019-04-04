@@ -5,8 +5,7 @@
 	height: 300px;
 	margin: 0 15px 53px;
 	background-color: #fff;
-	border-radius: 7px;
-	box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+	border: 1px solid #ccc;
 }
 
 .presentCard {
@@ -19,10 +18,6 @@
 }
 
 .presentCard:hover .name {
-	color: #D19E1B;
-}
-
-.userPresentList .presentCard:hover .name {
 	color: #17A2B8;
 }
 
@@ -30,8 +25,6 @@
 .presentCardDisabled img {
 	width: 100%;
 	height: 170px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
 	border-bottom: 1px solid #ccc;
 }
 
@@ -63,17 +56,15 @@
 }
 
 .reserveButton,
+.cancelButton,
+.disabledButton {
+	border-radius: 0;
+}
+
+.reserveButton,
 .cancelButton {
 	border: none;
 	transition: all 0.3s ease-in-out;
-}
-
-.reserveButton {
-	background-color: #D19E1B;
-}
-
-.reserveButton:hover {
-	background-color: #FFCF40;
 }
 
 .presentList,

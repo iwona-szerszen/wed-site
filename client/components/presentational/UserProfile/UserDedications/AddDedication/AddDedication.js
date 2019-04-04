@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './AddDedication.css';
 
 class AddDedication extends Component {
   onSubmitAddDedication(event) {
@@ -15,7 +16,10 @@ class AddDedication extends Component {
     return (
       <div>
         <h4>Add new dedication</h4>
-        <form onSubmit={event => this.onSubmitAddDedication(event)}>
+        <form 
+          className={styles.formContainer}
+          onSubmit={event => this.onSubmitAddDedication(event)}
+        >
             <div className='form-group row'>
               <label htmlFor='videoId' className='col-sm-2 col-form-label'>Video's id</label>
               <div className='col-sm-10'>

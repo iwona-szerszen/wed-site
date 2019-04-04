@@ -78,11 +78,10 @@ class UserConfirmation extends Component {
 	}
 	renderEditConfirmation() {
 		return (
-			<div className={styles.editConfirmationInfo}>
-				<div>You have informed us about your presence at the wedding. If you really have to edit your confirmation you can do this sending form below, but only until June 30, 2019. </div>
+			<div>
+				<div className={styles.editConfirmationInfo}>You have informed us about your presence at the wedding. If you really have to edit your confirmation you can do this sending form below, but only until June 30, 2019. </div>
 				{this.renderConfirmPresenceForm()}
 			</div>
-
 		);
 	}
 	render() {

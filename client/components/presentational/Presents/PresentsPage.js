@@ -6,7 +6,7 @@ import styles from './PresentsPage.css';
 
 const PresentsPage = props => {
 	return (
-		<Container fluid className={styles.containerFluid}>
+		<Container fluid>
 			<div className={styles.container}>
 				<section className={styles.introduction}>
 					<p>What we want most for our wedding is to have all of our friends and family there in Santorini to celebrate the occasion with us, and so, more than anything, we would simply enjoy your presence.</p>

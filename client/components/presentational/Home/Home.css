@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Euphoria+Script');
 
-.containerFluid {
-	background: url('../../../../assets/images/goldBg.jpg') 0/cover fixed;
-	height: 100%;
-	overflow-y: auto;
+.hero {
+	height: 100vh;
+	width: 100%;
+	background: url('../../../../assets/images/couple.jpg') 12% center/cover;
+	position: relative;
+	top: -90px;
 }
 
-.welcomeContainer,
-.carouselContainer {
+.container,
+.welcomeContainer {
 	max-width: 960px;
 	width: 100%;
 	margin: 0 auto;
 }
 
 .welcomeContainer {
-	min-height: calc(100vh - 490px);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 10px 0 15px;
+	padding: 0;
 }
 
 .data,
@@ -31,9 +32,8 @@
 	flex-direction: column;
 	justify-content: center;
 	font-family: 'Euphoria Script', cursive;
-	font-size: 1.3em;
+	font-size: 30px;
 	font-weight: 600;
-	color: #800020;
 }
 
 .countdown {
@@ -41,34 +41,32 @@
 }
 
 .names {
-	font-size: 2.3em ;
+	font-size: 70px;
+	color: #516798;
 }
 
-.carouselContainer {
-	box-shadow: 0 0 18px #000;
-	margin-bottom: 20px;
+.introduction {
+	font-size: 20px;
+	text-align: justify;
+	margin: 70px auto 50px;
 }
 
 @media (max-width: 992px) {
-	.containerFluid {
-		padding-left: 15px;
-		padding-right: 15px;
+	.names {
+		font-size: 60px;
 	}
-	.welcomeContainer {
-		height: calc(100vh - 485px);
-	}
-	.carouselContainer {
-		margin-bottom: 15px;
+
+	.introduction {
+		margin: 50px auto 40px;
 	}
 }
 
 @media (max-width: 768px) {
-	.welcomeContainer {
-		height: 220px;
-	}
 	.data {
 		text-align: center;
+		padding-bottom: 15px;
 	}
+
 	.data:after {
 		position: absolute;
 		bottom: 0;
@@ -78,9 +76,34 @@
 		width: 100%;
 		content: '';
 		height: 1px;
-		box-shadow: 1px 1px 4px #000;
+		background-color: #737373;
 	}
-	.carouselContainer {
-		margin-top: 5px;
+
+	.countdown {
+		padding-top: 15px;
+	}
+}
+
+@media (max-width: 576px) {
+	.hero {
+		background: url('../../../../assets/images/coupleSm.jpg') center 30%/cover;
+		height: calc(100vh - 50px);
+		top: 0;
+	}
+
+	.names {
+		font-size: 50px;
+	}
+
+	.data {
+		font-size: 25px;
+	}
+
+	.welcomeContainer {
+		margin-top: 40px;
+	}
+
+	.introduction {
+		font-size: 19px;
 	}
 }

@@ -1,28 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Euphoria+Script');
-
-.containerFluid {
-	background: url('../../../../assets/images/guests.jpg') 0/cover fixed;
-}
-
 .container {
 	position: relative;
 	max-width: 960px;
 	width: 100%;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	display: flex;
 	justify-content: space-between;
-	padding-top: 30px;
 }
 
 .introduction {
-	background-color: rgba(0,0,0,0.6);
-	color: #fff;
-	font-family: 'Euphoria Script', cursive;
-	font-size: 24px;
-	letter-spacing: 1px;
+	font-size: 18px;
+	color: #545454;
 	text-align: justify;
-	padding: 15px;
-	margin-bottom: 15px;
+	padding: 0;
+	margin-bottom: 30px;
 }
 
 .introduction p:nth-child(2) {
@@ -37,12 +27,12 @@
 
 .RSVPbutton {
 	display: inline-block;
-	background-color: transparent;
-	border: 1px solid #fff;
+	background-color: #116355;
+	border: none;
+	outline: none;
 	line-height: 2.5em;
 	padding: 0 0 0 1em;
 	color: #fff;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	font-weight: 500;
 	font-size: 17px;
@@ -59,7 +49,6 @@
     margin-left: .75em;
     font-weight: 600;
     position: relative;
-    border: none;
 }
 
 .arrow:after {
@@ -69,12 +58,14 @@
 	left: 0;
 	width: 100%;
 	content: '❯';
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: #0b453b;
 }
 
-.RSVPbutton:hover {
-	background-color: #fff;
-	color: #D7A038;
+.RSVPbutton:hover,
+.RSVPbutton:active {
+	background-color: #fcfcfc;
+	color: #116355;
+	outline: 1px solid #116355;
 }
 
 .RSVPbutton:hover .arrow {
@@ -82,23 +73,11 @@
 	background-color: #D7A038;
 }
 
-.RSVPbutton:active {
-	color: #000;
-}
-
 .RSVPbutton:active .arrow {
 	margin-left: 1.6em;
 }
 
-.RSVPbutton:focus {
-	outline: none;
-}
-
 @media (max-width: 768px) {
-	.container {
-		padding-top: 15px;
-	}
-
 	.introduction {
 		margin-bottom: 15px;
 	}

@@ -16,7 +16,7 @@ const PresentCard = props => {
 					<div className={styles.price}>{props.present.price} &#8364;</div>
 					<div className={styles.buttonContainer}>
 						<Button
-							variant='primary'
+							variant='info'
 							className={styles.reserveButton}
 							onClick={() => props.reservePresent(props.present._id)}
 						>
@@ -37,7 +37,13 @@ const PresentCard = props => {
 					<div className={styles.name}>{props.present.name}</div>
 					<div className={styles.price}>{props.present.price} &#8364;</div>
 					<div className={styles.buttonContainer}>
-						<Button variant='secondary' disabled>Reserved</Button>
+						<Button 
+							variant='secondary' 
+							disabled
+							className={styles.disabledButton}
+						>
+							Reserved
+						</Button>
 					</div>
 				</div>
 			</div>

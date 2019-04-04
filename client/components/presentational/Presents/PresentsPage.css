@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Euphoria+Script');
-
-.containerFluid {
-	background: url('../../../../assets/images/goldBg.jpg') 0/cover fixed;
-}
-
 .container {
 	max-width: 960px;
 	width: 100%;
@@ -12,14 +6,9 @@
 }
 
 .introduction {
-	background-color: rgba(128, 0, 32, 0.6);
-	border-radius: 7px;
-	color: #fff;
-	font-family: 'Euphoria Script', cursive;
-	font-size: 24px;
-	letter-spacing: 1px;
+	font-size: 18px;
+	color: #545454;
 	text-align: justify;
-	padding: 15px;
 	margin-bottom: 50px;
 }
 

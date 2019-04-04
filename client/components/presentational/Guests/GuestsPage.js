@@ -11,13 +11,13 @@ import styles from './GuestsPage.css';
 
 const GuestsPage = props => {
 	return (
-		<Container fluid className={styles.containerFluid}>
+		<Container fluid>
 			<Row className={styles.container}>
 				<Col sm={12} md={10}>
 					<Row>
 						<Col className={styles.introduction}>
 							<p>We are so excited for the wedding on Santorini on July 27! It will be great to celebrate with everyone who can make the trip, but if you cannot travel to Santorini within this period, we hope you will celebrate with us upon our return.</p>
-							<p><strong>Please inform us about your presence at the the wedding by June 30, 2019</strong> (click R.S.V.P. button below).</p>
+							<p><strong>Please inform us about your presence at the wedding by June 30, 2019</strong> (click R.S.V.P. button below).</p>
 						</Col>
 					</Row>
 					<Row>
