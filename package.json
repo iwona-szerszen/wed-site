@@ -1,6 +1,6 @@
 {
   "name": "wed-site",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Wedding site - isomorphic application built on MERN stack dedicated to wedding guests",
   "scripts": {
     "test": "cross-env NODE_ENV=test PORT=8080 MONGO_URL=mongodb://localhost:27017/mern-test node_modules/.bin/nyc node node_modules/ava/cli.js",
