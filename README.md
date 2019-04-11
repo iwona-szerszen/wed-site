@@ -45,7 +45,7 @@ and then start the app in development mode:
 
 or in production mode:
 ```
-  npm run start:prod
+  npm run bs
 ```
 
 **Note : Please make sure your MongoDB is running.** For MongoDB installation guide see [this](https://docs.mongodb.org/v3.0/installation/). Also `npm6` is required to install dependencies properly.
