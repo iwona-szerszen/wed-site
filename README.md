@@ -33,19 +33,18 @@ Project created with:
 To run this project, install it locally using npm:
 
 ```
-  cd wed-site
-  npm install
-  npm start
+  $ cd wed-site
+  $ npm install
 ```
 and then start the app in development mode:
 
 ```
-  npm start
+  $ npm start
 ```
 
 or in production mode:
 ```
-  npm run bs
+  $ npm run bs
 ```
 
 **Note : Please make sure your MongoDB is running.** For MongoDB installation guide see [this](https://docs.mongodb.org/v3.0/installation/). Also `npm6` is required to install dependencies properly.
@@ -86,11 +85,11 @@ Index.js simply does client side rendering using the data provided from `window.
 
 ## Available Commands
 
-1. `npm run start` - starts the development server with hot reloading enabled,
+1. `$ npm run start` - starts the development server with hot reloading enabled,
 
-2. `npm run bs` - bundles the code and starts the production server,
+2. `$ npm run bs` - bundles the code and starts the production server,
 
-3. `npm run lint` - runs linter to check for lint errors.
+3. `$ npm run lint` - runs linter to check for lint errors.
 
 
 ## Road to version 2
