@@ -14,7 +14,7 @@ const infos = [
 			alt: 'santorini',
 		},
 		title: 'Wedding on Santorini',
-		content: 'Our wedding will be taking place on October 26, 2019 on beautiful Santorini island. We fell in love with Santorini\'s culture, people, beaches and caldera during our travels and couldn\'t think of a better place to celebrate this special occasion.',
+		content: 'Our wedding will be taking place on February 29, 2020 on beautiful Santorini island. We fell in love with Santorini\'s culture, people, beaches and caldera during our travels and couldn\'t think of a better place to celebrate this special occasion.',
 	},
 	{
 		image: {
@@ -43,10 +43,10 @@ const Home = () => {
 					<Row className={styles.welcomeContainer}>
 						<Col className={styles.data} md='auto'>
 							<div className={styles.names}>Amanda &amp; David</div>
-							<div>Celebrate with us on October 26, 2019</div>
+							<div>Celebrate with us on February 29, 2020</div>
 						</Col>
 						<Col className={styles.countdown} md='auto'>
-							<CountdownContainer weddingDate={new Date(2019, 9, 26, 17, 0, 0)} />
+							<CountdownContainer weddingDate={new Date(2020, 1, 29, 17, 0, 0)} />
 						</Col>
 					</Row>
 					<div>

@@ -16,8 +16,8 @@ const GuestsPage = props => {
 				<Col sm={12} md={10}>
 					<Row>
 						<Col className={styles.introduction}>
-							<p>We are so excited for the wedding on Santorini on October 26! It will be great to celebrate with everyone who can make the trip, but if you cannot travel to Santorini within this period, we hope you will celebrate with us upon our return.</p>
-							<p><strong>Please inform us about your presence at the wedding by September 30, 2019</strong> (click R.S.V.P. button below).</p>
+							<p>We are so excited for the wedding on Santorini on February 29, 2020! It will be great to celebrate with everyone who can make the trip, but if you cannot travel to Santorini within this period, we hope you will celebrate with us upon our return.</p>
+							<p><strong>Please inform us about your presence at the wedding by January 31, 2020</strong> (click R.S.V.P. button below).</p>
 						</Col>
 					</Row>
 					<Row>
